@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net462;net8.0;net9.0;net10.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <UseVSTest>true</UseVSTest>
+    <!-- Restore/build every framework for portable lockfiles; net462 tests require Windows. -->
+    <IsTestProject Condition="'$(TargetFramework)' == 'net462' and !$([MSBuild]::IsOSPlatform('Windows'))">false</IsTestProject>
+    <IsTestingPlatformApplication Condition="'$(TargetFramework)' == 'net462' and !$([MSBuild]::IsOSPlatform('Windows'))">false</IsTestingPlatformApplication>
+    <RootNamespace>tzdata.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSTest" Version="4.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\tzdata.NET\tzdata.NET.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+</Project>

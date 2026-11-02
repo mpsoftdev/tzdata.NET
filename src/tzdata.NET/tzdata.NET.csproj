@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net462;net8.0;net9.0;net10.0</TargetFrameworks>
+    <Description>Lightweight library to fetch time zone data from the IANA Time Zone Database</Description>
+    <Authors>Martin Pelletier</Authors>
+    <PackageId>tzdata.NET</PackageId>
+    <PackageTags>timezone;time;zone;time zone;iana;tzdb;olson</PackageTags>
+    <PackageProjectUrl>https://github.com/mpsoftdev/tzdata.NET</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.0.0</Version>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>tzdata</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+</Project>

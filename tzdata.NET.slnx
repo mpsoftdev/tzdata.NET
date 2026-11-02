@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="LICENSE.txt" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/tzdata.NET/tzdata.NET.csproj" />
+  </Folder>
+  <Project Path="test/tzdata.NET.Tests/tzdata.NET.Tests.csproj" Id="db1e8bb2-bebb-4da1-b279-ca269c1583c8" />
+</Solution>
